@@ -2,7 +2,6 @@
 #define __rk4_h__
 
 #include <vector>
-#include <iostream>
 
 template<class T>
 class rk4 {
@@ -10,10 +9,11 @@ class rk4 {
     unsigned int size;
     T h;
     T (**f)(T* x);
- public:
     std::vector<T*> x;
+ public:
 
     rk4(T lap, T (**functions)(T* x), T* initials, unsigned int size);
+    T* operator [](unsigned int point);
     void iterate(unsigned int iters);
     ~rk4();
 
@@ -35,6 +35,11 @@ rk4<T>::rk4(T lap, T (**functions)(T* x), T* initials, unsigned int size) {
     for (unsigned int i = 0; i < size; i++)
         xx[i] = initials[i];
     x.push_back(xx);
+}
+
+template<class T>
+T* rk4<T>::operator [](unsigned int point) {
+    return x[point];
 }
 
 template<class T>
