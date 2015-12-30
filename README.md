@@ -13,6 +13,8 @@ of ordinary differential equations (ODEs) implemented in C/C++.
 
 How to use `rk4` class: read `rk4/main.cpp`
 
+> *Advice*: Runge Kutta Methods are solvers for non-stiff ODEs.
+
 ### Example: Lorenz Attractor
 
 Extract files and open project's folder. Then:
