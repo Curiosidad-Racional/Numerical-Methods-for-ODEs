@@ -71,7 +71,7 @@ runge_kutta_dopri5.
 cd boost
 make
 make test
-totem test/test.mp4
+mplayer test/test.mp4
 ```
 
 You can see the result:
