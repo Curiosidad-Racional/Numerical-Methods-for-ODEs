@@ -2,7 +2,7 @@ bin=bin
 src=src
 test=test
 
-bulirsch: ${src}/runge_kutta_dopri5.cpp
+lorenz: ${src}/runge_kutta_dopri5.cpp
 	g++ -o ${bin}/lorenz ${src}/runge_kutta_dopri5.cpp -I ~/Prog/c/lib -std=c++11
 clean:
 	rm -f ${bin}/lorenz

@@ -5,7 +5,7 @@ then
     HEAD="$1"
 fi
 N=$(ls -1 "$HEAD"*.dat | wc -l)
-LIMITS=$(cat "$HEAD"*.dat | awk -f "${HEAD%/*}/maxmin2-4.awk")
+LIMITS=$(cat "$HEAD"*.dat | gawk -f "${HEAD%/*}/maxmin2-4.awk")
 echo "
 set terminal pngcairo size 1024,768 enhanced font 'Verdana,10'
 $LIMITS

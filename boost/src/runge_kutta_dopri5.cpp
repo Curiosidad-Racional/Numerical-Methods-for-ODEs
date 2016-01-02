@@ -16,6 +16,12 @@ using namespace boost::numeric::odeint;
 
 typedef boost::array< double , 3 > state_type;
 
+/*
+  x' = a ( y - x )
+  y' = x ( b - z ) - y
+  z' = x y - c z
+*/
+
 static double a = 10., b = START, c=8./3.;
 
 void rhs( const state_type &x , state_type &dxdt , const double t )
